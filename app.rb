@@ -18,6 +18,7 @@ get '/display' do
   @name = session[:name_one]
   @day = session[:day_one]
   @month = session[:month_one]
+  @birthday = Date.new(2019, @month.to_i, @day.to_i)
   erb(:display)
 end
 

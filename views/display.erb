@@ -1,1 +1,8 @@
-<%= "Happy Birthday #{@name}!" %>
+
+<% if @birthday == Date.today %>
+<h1>Happy Birthday, <%=@name%>! </h1>
+<% elsif @birthday > Date.today %>
+<h1> Your birthday will be in <%= (@birthday - Date.today).to_i%> days! </h1>
+<% else %>
+<h1> Your birthday will be in <%= (365 - (Date.today - @birthday).to_i)%> days! </h1>
+<% end %>
